@@ -1,0 +1,26 @@
+package com.fullstack.Flight.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import com.fullstack.Flight.entity.Flight;
+import com.fullstack.Flight.service.FlightService;
+
+import io.swagger.v3.oas.annotations.parameters.RequestBody;
+
+public class FlightController {
+
+	@Autowired
+	private FlightService service;
+	
+	@PostMapping
+	public ResponseEntity<Flight> save(@RequestBody Flight f){
+		Flight resp = service.save(f);
+		return new ResponseEntity<Flight>(resp, HttpStatus.CREATED);
+		
+	}
+	
+	
+}

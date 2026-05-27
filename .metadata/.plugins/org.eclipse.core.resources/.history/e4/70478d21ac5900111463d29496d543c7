@@ -1,0 +1,9 @@
+package com.fullstack.Flight.repo;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.fullstack.Flight.entity.Flight;
+
+public class FlightRepository extends JpaRepository<Flight, Integer>{
+	
+}

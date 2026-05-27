@@ -1,0 +1,137 @@
+body{
+    background: linear-gradient(to right, #97aed9, #243b55);
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container{
+    margin-top: 30px;
+}
+
+h1,h2,h3{
+    color: white;
+    font-weight: bold;
+}
+
+.card{
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(147, 214, 255, 0.3);
+    transition: 0.3s;
+}
+
+.card:hover{
+    transform: translateY(-5px);
+}
+
+.table{
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.table thead{
+    background: #0d6efd;
+    color: white;
+}
+
+.table tbody tr:hover{
+    background: #f1f1f1;
+    transition: 0.2s;
+}
+
+.btn{
+    border-radius: 10px;
+    padding: 8px 18px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-primary{
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+    border: none;
+}
+
+.btn-primary:hover{
+    transform: scale(1.05);
+}
+
+.btn-danger{
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
+    border: none;
+}
+
+.btn-danger:hover{
+    transform: scale(1.05);
+}
+
+.form-control{
+    border-radius: 12px;
+    padding: 12px;
+    border: 2px solid #ddd;
+    transition: 0.3s;
+}
+
+.form-control:focus{
+    border-color: #0d6efd;
+    box-shadow: 0 0 10px rgba(13,110,253,0.5);
+}
+
+.navbar{
+    border-radius: 0 0 20px 20px;
+    padding: 15px;
+    box-shadow: 0 5px 15px rgba(161, 166, 252, 0.3);
+}
+
+.navbar-brand{
+    font-size: 28px;
+    font-weight: bold;
+    color: #00c6ff !important;
+}
+
+.nav-link{
+    color: white !important;
+    font-weight: 500;
+    margin-left: 15px;
+    transition: 0.3s;
+}
+
+.nav-link:hover{
+    color: #00c6ff !important;
+    transform: scale(1.05);
+}
+
+.dropdown-menu{
+    border-radius: 12px;
+    border: none;
+}
+
+.alert{
+    border-radius: 15px;
+    font-weight: bold;
+}
+
+.search-box{
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.flight-card{
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    margin-top: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.flight-card h4{
+    color: #0d6efd;
+    font-weight: bold;
+}
+
+.flight-card p{
+    margin: 5px 0;
+    font-size: 17px;
+}

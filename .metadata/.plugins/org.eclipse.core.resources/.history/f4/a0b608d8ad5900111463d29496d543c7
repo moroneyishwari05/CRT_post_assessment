@@ -1,0 +1,5 @@
+package com.fullstack.Flight.exception;
+
+public class FlightNotFoundException {
+
+}

@@ -1,0 +1,87 @@
+package com.fullstack.Flight.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import com.fullstack.Flight.entity.Flight;
+import com.fullstack.Flight.service.FlightService;
+
+@RestController
+@CrossOrigin(origins = "http://localhost:5173")
+@RequestMapping("/api/flights")
+public class FlightController {
+
+    @Autowired
+    private FlightService service;
+
+   
+    @PostMapping
+    public ResponseEntity<Flight> save(@RequestBody Flight f) {
+
+        Flight resp = service.save(f);
+
+        return new ResponseEntity<>(resp, HttpStatus.CREATED);
+    }
+
+   
+    @GetMapping("/{code}")
+    public ResponseEntity<Flight> findByCode(@PathVariable int code) {
+
+        Flight resp = service.findByCode(code);
+
+        return new ResponseEntity<>(resp, HttpStatus.OK);
+    }
+
+    
+    @GetMapping
+    public ResponseEntity<List<Flight>> listAll() {
+
+        List<Flight> list = service.listAll();
+
+        return new ResponseEntity<>(list, HttpStatus.OK);
+    }
+
+   
+    @GetMapping("/carrier/{carrier}")
+    public ResponseEntity<Flight> findByCarrier(@PathVariable String carrier) {
+
+        Flight resp = service.findByCarrier(carrier);
+
+        return new ResponseEntity<>(resp, HttpStatus.OK);
+    }
+
+    
+    @GetMapping("/route")
+    public ResponseEntity<Flight> findByRoute(
+            @RequestParam String source,
+            @RequestParam String destination) {
+
+        Flight resp = service.findByRoute(source, destination);
+
+        return new ResponseEntity<>(resp, HttpStatus.OK);
+    }
+
+    
+    @GetMapping("/price")
+    public ResponseEntity<List<Flight>> findByPriceRange(
+            @RequestParam double min,
+            @RequestParam double max) {
+
+        List<Flight> resp = service.findByPriceBetween(min, max);
+
+        return new ResponseEntity<>(resp, HttpStatus.OK);
+    }
+
+    
+    @DeleteMapping("/{code}")
+    public ResponseEntity<Flight> delete(@PathVariable int code) {
+
+        Flight resp = service.delete(code);
+
+        return new ResponseEntity<>(resp, HttpStatus.OK);
+    }
+}

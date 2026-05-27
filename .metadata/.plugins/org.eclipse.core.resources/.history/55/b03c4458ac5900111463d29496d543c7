@@ -1,0 +1,71 @@
+package com.fullstack.Flight.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.fullstack.Flight.entity.Flight;
+import com.fullstack.Flight.service.FlightService;
+
+import io.swagger.v3.oas.annotations.parameters.RequestBody;
+
+public class FlightController {
+
+	@Autowired
+	private FlightService service;
+	
+	@PostMapping
+	public ResponseEntity<Flight> save(@RequestBody Flight f){
+		Flight resp = service.save(f);
+		return new ResponseEntity<Flight>(resp, HttpStatus.CREATED);
+		
+	}
+	
+	@GetMapping 
+	public ResponseEntity<Flight> findByCode(@PathVariable int code){
+		Flight resp = service.findByCode(code);
+		return new ResponseEntity<Flight>(resp, HttpStatus.FOUND);
+		
+	}
+	
+	@GetMapping 
+	public ResponseEntity<List<Flight>> listAll(){
+		List<Flight> list = service.listAll();
+		return new ResponseEntity<List<Flight>>(list, HttpStatus.FOUND);
+	}
+	
+	@GetMapping 
+	public ResponseEntity<Flight> findByCarrier(@PathVariable String carrier){
+		Flight resp = service.findByCarrier(carrier);
+		return new ResponseEntity<Flight>(resp, HttpStatus.FOUND);
+		
+	}
+	
+	@GetMapping 
+	public ResponseEntity<Flight> findByRoute(@PathVariable String source, String destination){
+		Flight resp = service.findByCarrier(source, destination);
+		return new ResponseEntity<Flight>(resp, HttpStatus.FOUND);
+		
+	}
+	
+	@GetMapping 
+	public ResponseEntity<List<Flight>> findByPriceRange(@RequestParam double max, double min ) {
+		List<Flight> resp = service.findByPriceBetween(max, min);
+		return new ResponseEntity<List<Flight>>(resp, HttpStatus.FOUND);
+	}
+	
+	@GetMapping 
+	public ResponseEntity<Flight> delete(@PathVariable int code){
+		Flight resp = service.delete(code);
+		return new ResponseEntity<Flight>(resp, HttpStatus.FOUND);
+		
+	}
+	
+	
+}

@@ -1,0 +1,44 @@
+package com.fullstack.Flight.repository;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.util.List;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+
+import com.fullstack.Flight.entity.Flight;
+
+@DataJpaTest
+public class FlightRepositoryTest {
+
+    @Autowired
+    private FlightRepository repo;
+
+    @Test
+    void testSaveFlight() {
+
+        Flight f = new Flight(
+                101,
+                "Indigo",
+                "Nagpur",
+                "Mumbai",
+                4500
+        );
+
+        Flight saved = repo.save(f);
+
+        assertEquals(101, saved.getCode());
+    }
+
+    @Test
+    void testFindAll() {
+
+        repo.save(new Flight(102,"AirIndia","Delhi","Pune",6000));
+
+        List<Flight> list = repo.findAll();
+
+        assertEquals(true, list.size() > 0);
+    }
+}

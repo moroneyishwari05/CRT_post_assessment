@@ -1,0 +1,14 @@
+package com.fullstack.Flight.service;
+
+import org.jspecify.annotations.Nullable;
+
+import com.fullstack.Flight.entity.Flight;
+
+public interface FlightService {
+
+	
+	Flight save(Flight flight);
+
+	Flight findByCode(int code);
+
+}

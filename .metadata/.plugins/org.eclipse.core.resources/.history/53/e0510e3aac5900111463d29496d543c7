@@ -1,0 +1,51 @@
+package com.fullstack.Flight.service;
+
+import java.util.List;
+
+import com.fullstack.Flight.entity.Flight;
+
+public class FlightServiceIMPL implements FlightService{
+
+	@Override
+	public Flight save(Flight flight) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Flight findByCode(int code) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Flight> listAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Flight findByCarrier(String carrier) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Flight findByCarrier(String source, String destination) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Flight> findByPriceBetween(double max, double min) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Flight delete(int code) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

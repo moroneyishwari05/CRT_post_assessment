@@ -1,0 +1,12 @@
+package com.fullstack.Flight.service;
+
+import org.jspecify.annotations.Nullable;
+
+import com.fullstack.Flight.entity.Flight;
+
+public interface FlightService {
+
+	@Nullable
+	Object save(Flight flight);
+
+}

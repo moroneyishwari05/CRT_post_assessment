@@ -1,0 +1,22 @@
+package com.fullstack.Flight.service;
+
+import java.util.List;
+
+import com.fullstack.Flight.entity.Flight;
+
+public interface FlightService {
+
+    Flight save(Flight flight);
+
+    Flight findByCode(int code);
+
+    List<Flight> listAll();
+
+    Flight findByCarrier(String carrier);
+
+    Flight findByRoute(String source, String destination);
+
+    List<Flight> findByPriceBetween(double min, double max);
+
+    Flight delete(int code);
+}
