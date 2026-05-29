@@ -168,14 +168,11 @@ The frontend communicates with the Spring Boot backend using **Axios** to perfor
 
 ## 📸 Screenshots
 
-Add screenshots of your project UI here.
+### 🏠 All Flights
+![All Flights](screenshots/all-flights.png)
 
-Example:
-
-- Home Page
-- Add Flight Page
-- Flight List
-- Update/Delete Operations
+### ➕ Add Flight
+![Add Flight](screenshots/add-flight.png)
 
 ---
 
