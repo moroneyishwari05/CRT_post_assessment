@@ -90,7 +90,7 @@ Open the backend project in:
 - IntelliJ IDEA
 - Spring Tool Suite (STS)
 
-### 3. Configure PostgreSQL Database
+### 3. Configure PostgreSQL Database (Can use MySQL also)
 
 Create a PostgreSQL database:
 
