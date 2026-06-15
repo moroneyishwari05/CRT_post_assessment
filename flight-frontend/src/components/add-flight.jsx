@@ -12,7 +12,7 @@ export default function AddFlight() {
         destination: '',
         cost: ''
     })
-
+//
     const handleChange = (e) => {
 
         setFlight({
